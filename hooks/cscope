@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -e
+dir="`pwd`"
+
+find $dir -type f -name "*.[chxsS]" > cscope.files
+cscope -bkq
