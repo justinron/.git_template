@@ -3,5 +3,8 @@
 set -e
 dir="`pwd`"
 
-find $dir -type f -name "*.[chxsS]" > cscope.files
+find $dir -type f \
+    -path "$dir/arch/*" ! -path "$dir/arch/x86*" -prune -o \
+    -path "$dir/include/arch/*" ! -path "$dir/include/arch/x86*" -prune -o \
+    -name "*.[chxsS]" > cscope.files
 cscope -bkq
