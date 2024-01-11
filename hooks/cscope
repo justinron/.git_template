@@ -6,5 +6,5 @@ dir="`pwd`"
 find $dir  \
     -path "$dir/arch/*" ! -path "$dir/arch/x86*" -prune -o \
     -path "$dir/include/arch/*" ! -path "$dir/include/arch/x86*" -prune -o \
-    -name "*.[chxsS]" -print -o -name "*.cpp" -print > cscope.files
+    -name "*.[chxsS]" -print -o -name "*.cpp" -print -o -name "*.cc" -print > cscope.files
 cscope -bkq
